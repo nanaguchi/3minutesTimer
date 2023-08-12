@@ -14,16 +14,18 @@ public class Main extends Object {
      /**
      * エントリポイント。
      * 
-     * @param args 実行時引数。ここでは使用しない。
+     * @param args 実行時引数。
      */
     public static void main(String[] args) {
 
         //ウィンドウの設定
         JFrame jframe = new JFrame();
         JLabel jLabel = new JLabel();
+
         jframe.setLayout(new FlowLayout());
         jframe.setBounds(500, 300, 500, 100);
         jframe.setTitle("３分タイマー");
+
         jframe.add(jLabel);
         jframe.setVisible(true);
 
@@ -41,13 +43,15 @@ public class Main extends Object {
 
                 if (count <= 0) {
                     atimer.cancel();
-                    jLabel.setText("Time up");
+                    jLabel.setText("Time up!");
                 }
+
             }
+            
         };
 
         atimer.scheduleAtFixedRate(aTimerTask, 0, 1000);
 
-}
+    }
 
 }
